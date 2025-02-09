@@ -4,7 +4,7 @@ A website to test your pokemon knowledge. Curious to see how many pokemon you ca
 
 To try the website:
 
-1. Clone the repository using `https://github.com/ryanwibawaa/guess-the-pokemon.git`
+1. Clone the repository using `git clone https://github.com/ryanwibawaa/guess-the-pokemon.git`
 2. Run `npm install`
 3. Run `node index.js`
 
