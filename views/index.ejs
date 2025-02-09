@@ -1,0 +1,18 @@
+<%- include("partial/header.ejs") %>
+
+<div class="container content">
+  <div class="left"><img src="<%= image %>" alt="pokemon" /></div>
+
+  <div class="right">
+    <h3>
+      Are you a pokemon fan or a pokemon nerd? Test your pokemon knowledge and
+      see how many pokemon can you guess correctly!
+    </h3>
+    <button onclick="navigateTo('/game')" type="button" class="btn btn-warning">
+      Guess the Pokemon!
+    </button>
+    <h3 class="high-score">High Score: <%= high_score %></h3>
+  </div>
+</div>
+
+<%- include("partial/footer.ejs") %>

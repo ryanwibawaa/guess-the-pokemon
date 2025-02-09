@@ -1,0 +1,51 @@
+<%- include("partial/header.ejs") %>
+
+<div class="container content">
+  <div class="left">
+    <img src="<%= image %>" alt="pokemon" />
+  </div>
+
+  <% if (isCorrect){ %>
+  <div class="right">
+    <h3>Correct! It's <%= name %></h3>
+    <button onclick="navigateTo('/game')" type="button" class="btn btn-warning">
+      Continue
+    </button>
+  </div>
+  <% } else if (isCorrect === false){ %>
+  <div class="right">
+    <h3>Wrong! It's <%= name %></h3>
+    <button onclick="navigateTo('/')" type="button" class="btn btn-warning">
+      Try again!
+    </button>
+  </div>
+  <% } else { %>
+  <form class="right" action="/answer_guess" method="post">
+    <div class="top-left">
+      <h3>Score: <%= score %></h3>
+    </div>
+    <div class="top-right">
+      <h3>High Score: <%= high_score %></h3>
+    </div>
+    <div class="center">
+      <h3>What is this pokemon?</h3>
+      <div class="input-group mb-3">
+        <!-- <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
+        </div> -->
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Default"
+          aria-describedby="inputGroup-sizing-default"
+          name="name"
+          id="name"
+        />
+      </div>
+      <button type="submit" class="btn btn-danger">Guess!</button>
+    </div>
+  </form>
+  <% } %>
+</div>
+
+<%- include("partial/footer.ejs") %>
