@@ -14,7 +14,7 @@ var pokemon_image;
 var pokemon_name;
 var isCorrect;
 
-app.use(express.static("public"));
+app.use(express.static(path.join(process.cwd(), "public")));
 app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
