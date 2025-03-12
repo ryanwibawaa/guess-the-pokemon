@@ -110,6 +110,6 @@ app.listen(port, () => {
   console.log(`Server is listening in port ${port}`);
 });
 
-module.exports = (req, res) => {
+export default (req, res) => {
   app(req, res);
 };
