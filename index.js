@@ -16,6 +16,9 @@ var isCorrect;
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
 function checkHighScore(isCorrect) {
   if (score >= high_score) {
     high_score = score;
