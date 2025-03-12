@@ -2,7 +2,7 @@ import express from "express";
 import axios from "axios";
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const api_url = "https://pokeapi.co/api/v2/pokemon/";
 
 // Global variable for the score
@@ -109,3 +109,7 @@ app.post("/answer_guess", (req, res) => {
 app.listen(port, () => {
   console.log(`Server is listening in port ${port}`);
 });
+
+module.exports = (req, res) => {
+  app(req, res);
+};
